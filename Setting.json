@@ -1,21 +1,31 @@
 {
+  // THEME & ICONS
   "workbench.colorTheme": "Correia Gruvbox Theme",
   "workbench.iconTheme": "Monokai Classic Icons",
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.drawBoldTextInBrightColors": true,
+
+  "explorer.compactFolders": false,
+  "workbench.tree.indent":8,
+  // FONTS
   "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace",
   "editor.fontSize": 16,
+  // enable only useful ligatures to avoid weird symbols in some fonts
   "editor.fontLigatures": "'calt','liga'",
   "terminal.integrated.fontFamily": "'JetBrains Mono', monospace,'JetBrainsMono Nerd Font'",
+
+  // EDITOR UX
   "workbench.editor.enablePreview": false,
-  "workbench.editor.showTabs": "none",
-  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": "none",          // you wanted no tabs (boolean, not "none")
+  "breadcrumbs.enabled": false,                  // keep this for navigation
   "workbench.activityBar.location": "top",
   "workbench.sideBar.location": "right",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.secondarySideBar.showLabels": false,
-  "workbench.statusBar.visible": true,
+  "workbench.statusBar.visible": true,          // keep this—git branch, problems, tasks
   "workbench.editor.editorActionsLocation": "hidden",
+
+  // COLORS: minimal overrides so syntax remains readable
   "workbench.colorCustomizations": {
     "editor.background": "#000000",
     "editor.foreground": "#d4d4d4",
@@ -23,8 +33,8 @@
     "tab.activeBorderTop": "#88d327",
     "activityBar.activeFocusBorder": "#ff0000",
     "sideBar.background": "#000000",
-    "terminal.background": "#000000",
-    "terminal.foreground": "#ebdbb2",
+    "terminal.background": "#000000",   // Gruvbox dark background
+    "terminal.foreground": "#ebdbb2",   // Gruvbox light text
     "terminalCursor.foreground": "#d79921",
     "terminal.ansiBlack": "#282828",
     "terminal.ansiRed": "#cc241d",
@@ -35,13 +45,13 @@
     "terminal.ansiCyan": "#689d6a",
     "terminal.ansiWhite": "#a89984"
   },
+  // don’t erase these contrast cues
   "editor.lineHighlightBackground": "#0a0a0a",
-  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
-  "eslint.useFlatConfig": true,
+  "eslint.useFlatConfig": true,                 // ESLint v9+ projects
   "eslint.format.enable": true,
   "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -49,15 +59,40 @@
   "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "prettier.requireConfig": true,
+  "prettier.requireConfig": true,               // only format if repo has config
   "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // FILE HYGIENE
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "explorer.autoReveal": false,
+
+  // SIGNAL-TO-NOISE
   "editor.renderControlCharacters": false,
-  "editor.inlayHints.enabled": "offUnlessPressed",
-  "editor.stickyScroll.enabled": true,
+  "editor.inlayHints.enabled": "offUnlessPressed", // hold Alt to see hints
+  "editor.stickyScroll.enabled": true,              // keeps context without tabs
+
+  // TRUST & PRIVACY (tweak to taste)
   "telemetry.telemetryLevel": "off",
-  "background.enabled": false
+
+  // EXTENSION-SPECIFIC
+  "background.enabled": false,
+  "files.exclude": {
+    "**/.git": false
+  }, // avoid CSS-injection extension
+  // Adding terminal background color
+
+  "editor.tokenColorCustomizations": {
+  "textMateRules": [
+    {
+      "scope": "comment",
+      "settings": {
+        "foreground": "#e7cbbece",
+        "fontStyle": "bold",   // remove italic
+      }
+    }
+  ]
+}
+
 }
