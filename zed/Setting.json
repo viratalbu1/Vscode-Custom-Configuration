@@ -120,39 +120,7 @@
   },
 
   // Port Fowarding
-  "ssh_connections": [
-    {
-      "host": "88.222.241.128",
-      "username": "virat",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home/virat/dev/projects/Personal/trial-pilot/./"],
-        },
-      ],
-      "port_forwards": [
-        {
-          "local_port": 5173,
-          "remote_port": 5173,
-        },
-      ],
-    },
-    {
-      "host": "virat-dev",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home/virat/dev/projects/Personal/trial-pilot/./"],
-        },
-      ],
-      "port_forwards": [
-        {
-          "local_port": 5173,
-          "remote_port": 5173,
-        },
-      ],
-    },
-  ],
+  
 
   // Fomating and ESLint Rules
   // "format_on_save": "on",
