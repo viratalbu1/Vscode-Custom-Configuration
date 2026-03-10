@@ -1,0 +1,265 @@
+{
+  // ===== THEME =====
+  // Pick your theme name from: "theme selector: toggle"
+  // (cmd-k cmd-t / ctrl-k ctrl-t)
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "model_parameters": []
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Gruvbox Dark",
+  },
+
+  // ===== ICONS =====
+  // Zed icon themes are extension-driven. Pick from: "icon theme selector: toggle"
+  // Closest vibes to “Monokai Classic Icons” usually come from VS Code icon packs in Zed.
+  "icon_theme": {
+    "mode": "dark",
+    "dark": "VSCode Icons for Zed (Dark NestJS)",
+    "light": "VSCode Icons for Zed (Dark NestJS)",
+  },
+
+  // ===== FONTS =====
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 16,
+
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 16,
+
+  // VS Code: "'calt','liga'"
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true,
+  },
+
+  // ===== EDITOR UX / SIGNAL-TO-NOISE =====
+  // Tabs hidden (closest to VS Code "showTabs": none)
+  "tab_bar": { "show": false },
+
+  // Breadcrumbs / toolbar noise (Zed default settings have toolbar.breadcrumbs as a toggle)
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": true,
+    "selections_menu": true,
+    "agent_review": true,
+    "code_actions": false,
+  },
+
+  // Similar to VS Code "editor.inlayHints.enabled": "offUnlessPressed"
+  "inlay_hints": {
+    "enabled": true,
+  },
+
+  // Similar to VS Code "editor.stickyScroll.enabled": true
+  "scroll_beyond_last_line": "off",
+
+  // Similar to VS Code "explorer.compactFolders": false (Zed calls it auto folding)
+  // Note: behavior has had bugs in some versions; if it doesn’t work, it’s Zed, not you.
+  "project_panel": {
+    "auto_fold_dirs": false,
+  },
+
+  // ===== TERMINAL =====
+  "terminal": {
+    "font_family": "JetBrains Mono",
+    "font_size": 16,
+    "cursor_shape": "block",
+    "line_height": "standard",
+  },
+
+  // ===== PRIVACY =====
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // ===== THEME OVERRIDES (your VS Code colorCustomizations vibe) =====
+  // IMPORTANT:
+  // - The key under theme_overrides must match your chosen dark theme name exactly.
+  // - If you pick "Gruvbox Dark", keep it as-is. If you pick another theme, rename the key.
+  "theme_overrides": {
+    "Gruvbox Dark": {
+      // Editor
+      "editor.background": "#000000",
+      "editor.foreground": "#d4d4d4",
+      "editor.document_highlight.bracket_background": "#5D737E",
+      "title_bar.background": "#000000",
+      "panel.background": "#000000",
+      "tab_bar.background": "#000000",
+      "tab.active_background": "#000000",
+      "editor.gutter.background": "#000000",
+      "tab.inactive_background": "#000000",
+      "toolbar.background": "#000000",
+      "editor.active_line.background": "#0a0a0a",
+      // Terminal (Gruvbox-ish palette like your VS Code settings)
+      "terminal.background": "#000000",
+      "terminal.foreground": "#ebdbb2",
+      // "terminal.cursor": "#d79921",
+      "terminal.ansi.black": "#282828",
+      "terminal.ansi.red": "#cc241d",
+      "terminal.ansi.green": "#98971a",
+      "terminal.ansi.yellow": "#d79921",
+      "terminal.ansi.blue": "#458588",
+      "terminal.ansi.magenta": "#b16286",
+      "terminal.ansi.cyan": "#689d6a",
+      "terminal.ansi.white": "#a89984",
+
+      // Comments: bold + your tint (VS Code had #e7cbbece)
+      "syntax": {
+        "comment": {
+          "color": "#e7cbbece",
+          "font_style": "normal",
+        },
+      },
+    },
+  },
+
+  // Port Fowarding
+  "ssh_connections": [
+    {
+      "host": "88.222.241.128",
+      "username": "virat",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/virat/dev/projects/Personal/trial-pilot/./"],
+        },
+      ],
+      "port_forwards": [
+        {
+          "local_port": 5173,
+          "remote_port": 5173,
+        },
+      ],
+    },
+    {
+      "host": "virat-dev",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/virat/dev/projects/Personal/trial-pilot/./"],
+        },
+      ],
+      "port_forwards": [
+        {
+          "local_port": 5173,
+          "remote_port": 5173,
+        },
+      ],
+    },
+  ],
+
+  // Fomating and ESLint Rules
+  // "format_on_save": "on",
+
+  // "languages": {
+  //   "TypeScript": {
+  //     "formatter": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": [
+  //           "exec",
+  //           "prettier",
+  //           "--stdin-filepath",
+  //           "{buffer_path}",
+  //         ],
+  //       },
+  //     },
+  //     "format_on_save": "on",
+  //   },
+  //   "TSX": {
+  //     "formatter": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": [
+  //           "exec",
+  //           "prettier",
+  //           "--stdin-filepath",
+  //           "{buffer_path}",
+  //         ],
+  //       },
+  //     },
+  //     "format_on_save": "on",
+  //   },
+  //   "JavaScript": {
+  //     "formatter": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": [
+  //           "exec",
+  //           "prettier",
+  //           "--stdin-filepath",
+  //           "{buffer_path}",
+  //         ],
+  //       },
+  //     },
+  //     "format_on_save": "on",
+  //   },
+  //   "JSDoc": {
+  //     "formatter": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": [
+  //           "exec",
+  //           "prettier",
+  //           "--stdin-filepath",
+  //           "{buffer_path}",
+  //         ],
+  //       },
+  //     },
+  //     "format_on_save": "on",
+  //   },
+  //   "JSON": {
+  //     "formatter": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": [
+  //           "exec",
+  //           "prettier",
+  //           "--stdin-filepath",
+  //           "{buffer_path}",
+  //         ],
+  //       },
+  //     },
+  //     "format_on_save": "on",
+  //   },
+  // },
+  "format_on_save": "on",
+  "languages": {
+    "CSS": {
+      "language_servers": ["tailwindcss-language-server"],
+    },
+    "TypeScript": {
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+    },
+    "TSX": {
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+    },
+  },
+  "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "importModuleSpecifierPreference": "non-relative",
+        },
+      },
+    },
+  },
+}
